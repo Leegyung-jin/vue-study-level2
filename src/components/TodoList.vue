@@ -21,7 +21,6 @@ export default {
     },
     toggleComplete: function(todoItem, index) {
       this.$emit('toggleItem', todoItem, index)
-
     }
   }
 }
