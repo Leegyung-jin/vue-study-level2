@@ -13,7 +13,7 @@
            @click="showModal = false">
         </i>
       </h3>
-      <p slot="body">할 일을 입력하세요.</p>
+      <p slot="body">아무 것도 입력하지 않았습니다.</p>
     </Modal>
   </div>
 </template>
@@ -30,7 +30,8 @@ export default {
   methods: {
     addTodo() {
       if (this.newTodoItem !== '') {
-        this.$emit('addTodoItem', this.newTodoItem);
+        // this.$emit('addTodoItem', this.newTodoItem);
+        this.$store.commit('addOneItem', this.newTodoItem);
         this.clearInput();
       } else {
         this.showModal = !this.showModal;
